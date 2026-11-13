@@ -21,3 +21,6 @@ Solved business-related questions about customers, sales, artists, genres, and i
 ## Project File
 - `music_store_analysis.sql`
 
+## Project Screenshot
+
+![Top Rock Artists](screenshots/top_rock_artists.png)
