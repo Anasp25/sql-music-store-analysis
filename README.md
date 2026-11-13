@@ -18,6 +18,14 @@ This project is about analyzing a Music Store database using MySQL to find usefu
 ## Analysis
 Solved business-related questions about customers, sales, artists, genres, and invoices.
 
+## Key Findings
+
+- Identified the top-spending customers.
+- Analyzed the best-selling artists.
+- Found the most popular music genres.
+- Compared invoice activity across countries.
+- Explored customer purchasing behavior.
+
 ## Project File
 - `music_store_analysis.sql`
 
