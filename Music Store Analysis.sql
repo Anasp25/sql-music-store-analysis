@@ -1,4 +1,4 @@
-select * from album2 ;
+
  -- Q : who is the sernior most employee base on Job title ?
  
 select  * from employee 
@@ -55,15 +55,15 @@ WHERE track_id in (
 
 select artist.artist_id, artist.name , count(artist.artist_id) as Number_of_songs 
 from track
-join album2
-on album2.album_id = track.album_id
+join album
+on album.album_id = track.album_id
 join artist 
-on artist.artist_id =  album2.artist_id
+on artist.artist_id =  album.artist_id
 join genre 
 on genre.genre_id =track.genre_id
 where genre.name like 'Rock%'
 group by artist.artist_id , artist.name
-order by Number_of_songs
+order by Number_of_songs desc
 limit 10 ;
 
 -- Q : Return all the track names that have a song length longer than the average song length.
@@ -84,8 +84,8 @@ with best_selling_artist  As (
 select artist.artist_id as artist_id , artist.name  as artist_name,  sum(invoice_line.unit_price * invoice_line.quantity) as total_sales
 from invoice_line
 join track on track.track_id = invoice_line.track_id
-join album2 on album2.album_id = track.album_id 
-join artist on artist.artist_id = album2.artist_id
+join album on album.album_id = track.album_id 
+join artist on artist.artist_id = album.artist_id
 group by 1,2
 order by 3 desc
 limit 1
@@ -97,7 +97,7 @@ join customer
 on invoice.customer_id = customer.customer_id
 join invoice_line on invoice_line.invoice_id = invoice.invoice_id
 join track on track.track_id = invoice_line.track_id
-join album2 on album2.album_id = track.album_id
+join album on album.album_id = track.album_id
 join best_selling_artist  as  bsa
 on bsa.artist_id = album2.artist_id
 group by 1,2,3,4
